@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myfirstApp">
+<head>
+<meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+
+	<title>controller</title>
+</head>
+<body ng-controller="mycontroller">
+<input type="text" ng-model="nuevoComentario.comentario">
+<input type="text" ng-model="nuevoComentario.usuario">
+<button ng-click="agregarComentario()">Add comment</button>
+<h1>comentarios</h3>
+<ul>
+	<li ng-repeat="comentario in comentarios">
+		<ul>
+		  Usuario: {{comentario.usuario}}
+		  Comentario: {{comentario.comentario}}
+		</ul>
+	</li>
+</ul>
+<h1>Posts</h3>
+<button ng-click="getPosts()">Get posts</button>
+<ul>
+	<li ng-repeat="post in posts">
+		<ul>
+		  titulo: {{post.title}}
+		  cuerpo: {{post.body}}
+		</ul>
+	</li>
+</ul>
+
+<h1>Sendpost</h1>
+<input type="text" ng-model="newPost.title">
+<input type="text" ng-model="newPost.body">
+<button ng-click="sendPost()">send post</button>
+
+</body>
+</html>
